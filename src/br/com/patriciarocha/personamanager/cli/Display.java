@@ -4,6 +4,7 @@ import br.com.patriciarocha.personamanager.model.Heroi;
 import br.com.patriciarocha.personamanager.model.Personagem;
 import br.com.patriciarocha.personamanager.model.Vilao;
 
+import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -72,6 +73,8 @@ public class Display {
     }
 
     public void listar(List<Personagem> personagens) {
+        Collections.sort(personagens); //personagens.stream().sorted();
+
         System.out.println("Listando... ");
         //personagens.forEach(p -> System.out.println(p));
         personagens.forEach(System.out::println);
