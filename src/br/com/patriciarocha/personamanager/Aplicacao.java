@@ -1,6 +1,7 @@
 package br.com.patriciarocha.personamanager;
 
 import br.com.patriciarocha.personamanager.cli.Display;
+import br.com.patriciarocha.personamanager.exception.OpcaoInvalidaException;
 import br.com.patriciarocha.personamanager.model.Heroi;
 import br.com.patriciarocha.personamanager.model.Opcao;
 import br.com.patriciarocha.personamanager.model.Personagem;
@@ -24,7 +25,7 @@ public class Aplicacao {
             try{
                 opcao = Opcao.converter(codigo);
                 processar(opcao);
-            }catch(IllegalArgumentException e){
+            }catch(OpcaoInvalidaException e){
                 display.exibirMensagem( e.getMessage());
             }
 

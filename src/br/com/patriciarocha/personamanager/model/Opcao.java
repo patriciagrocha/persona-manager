@@ -1,5 +1,7 @@
 package br.com.patriciarocha.personamanager.model;
 
+import br.com.patriciarocha.personamanager.exception.OpcaoInvalidaException;
+
 public enum Opcao {
 
     CADASTRAR_HEROI,
@@ -7,10 +9,10 @@ public enum Opcao {
     LISTAR,
     SAIR;
 
-    public static Opcao converter(int codigo){
+    public static Opcao converter(int codigo) throws OpcaoInvalidaException {
 
         if(codigo == 0 || codigo > 4)
-            throw new IllegalArgumentException("Opção inválida!");
+            throw new OpcaoInvalidaException("Opção inválida!");
         if(codigo == 4)
             return SAIR;
 
